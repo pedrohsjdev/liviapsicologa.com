@@ -1,0 +1,3 @@
+{
+  "extends": "@liviapsicologa.com/config/tsconfig.base.json"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "@liviapsicologa.com/db",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "db:push": "prisma db push",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio"
+  },
+  "dependencies": {
+    "@liviapsicologa.com/env": "workspace:*",
+    "@prisma/client": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@liviapsicologa.com/config": "workspace:*",
+    "prisma": "6.19.0",
+    "typescript": "catalog:"
+  }
+}

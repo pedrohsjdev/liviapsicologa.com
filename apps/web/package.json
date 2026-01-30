@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@astrojs/node": "^9.5.2",
+    "@iconify-json/simple-icons": "^1.2.68",
+    "@iconify-json/solar": "^1.2.5",
     "@liviapsicologa.com/env": "workspace:*",
     "@prisma/client": "catalog:",
     "astro": "^5.16.11",
+    "astro-icon": "^1.1.5",
     "dotenv": "catalog:",
     "zod": "catalog:"
   },

@@ -38,9 +38,9 @@ const companyLogos = [
   <main class="relative w-full">
       <!-- Background elements like vertical lines (Fixed to Container) -->
       <div class="fixed inset-0 pointer-events-none flex justify-center w-full h-full opacity-10 z-0 mt-[65px]">
-          <div class="container border-x border-[#3A4D39] h-full mx-auto grid grid-cols-4 md:grid-cols-12 gap-0 relative">
+          <div class="container border-x border-[#CBD5B9] h-full mx-auto grid grid-cols-4 md:grid-cols-12 gap-0 relative">
              {Array.from({ length: 12 }).map(() => (
-                <div class="border-r border-[#3A4D39] last:border-r-0 h-full hidden md:block"></div>
+                <div class="border-r border-[#CBD5B9] last:border-r-0 h-full hidden md:block"></div>
              ))}
           </div>
       </div>
@@ -55,16 +55,16 @@ const companyLogos = [
                     <defs>
                         <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" />
                     </defs>
-                    <circle cx="50" cy="50" r="38" fill="#F4F7F2" class="opacity-90 shadow-xl" />
+                    <circle cx="50" cy="50" r="38" fill="#F9F8F6" class="opacity-90 shadow-xl" />
                     <text font-size="9.5" font-weight="bold" letter-spacing="2">
-                        <textPath xlink:href="#circlePath" class="fill-[#3A4D39] uppercase font-mono">
+                        <textPath xlink:href="#circlePath" class="fill-[#CBD5B9] uppercase font-mono">
                             • Autoconhecimento • Florescer
                         </textPath>
                     </text>
                 </svg>
                 <!-- Center Icon inside circle -->
                 <div class="absolute inset-0 flex items-center justify-center">
-                    <Icon name="solar:sun-2-bold-duotone" class="text-[#3A4D39] size-10" />
+                    <Icon name="solar:sun-2-bold-duotone" class="text-[#CBD5B9] size-10" />
                 </div>
              </div>
         </div>
@@ -74,13 +74,13 @@ const companyLogos = [
             <!-- Left Content (50% of Container) -->
             <div class="w-full md:w-1/2 flex flex-col justify-center py-12 md:py-0 animate-clip-intro">
                 <div>
-                    <span class="inline-flex items-center gap-2 px-4 py-2 bg-[#D4E2CD] text-[#2F3E2E] rounded-full text-sm font-bold mb-8 tracking-wide uppercase shadow-sm">
+                    <span class="inline-flex items-center gap-2 px-4 py-2 bg-[#EBE6DF] text-[#2D3134] rounded-full text-sm font-bold mb-8 tracking-wide uppercase shadow-sm">
                         <Icon name="solar:star-bold-duotone" class="size-4" />
                         Atendimento Online
                     </span>
                     <h1 class="flex flex-col gap-4">
-                    <span class="text-lg md:text-xl font-bold tracking-widest uppercase text-[#4A5D49]">Psicóloga Clínica & Psicoterapia</span>
-                    <span class="text-4xl md:text-5xl lg:text-7xl font-serif italic font-medium leading-[1.1] text-[#2F3E2E] max-w-2xl">
+                    <span class="text-lg md:text-xl font-bold tracking-widest uppercase text-[#9DAC83]">Psicóloga Clínica & Psicoterapia</span>
+                    <span class="text-4xl md:text-5xl lg:text-7xl font-serif italic font-medium leading-[1.1] text-[#2D3134] max-w-2xl">
                         Um espaço seguro para você reencontrar sua essência.
                     </span>
                     </h1>
@@ -88,7 +88,7 @@ const companyLogos = [
 
                 <div class="flex flex-wrap gap-6 pt-12 items-center">
                     <!-- Standard Button (Previous WhatsApp style) -->
-                    <a href="#agendar" class="group relative inline-flex items-center gap-2 overflow-hidden bg-[#3A4D39] px-8 py-4 rounded-full transition-all hover:bg-[#2F3E2E] hover:shadow-xl hover:-translate-y-0.5">
+                    <a href="#agendar" class="group relative inline-flex items-center gap-2 overflow-hidden bg-[#BF6832] px-8 py-4 rounded-full transition-all hover:bg-[#8D2B00] hover:shadow-xl hover:-translate-y-0.5">
                         <!-- Subtle shimmer effect -->
                         <div class="absolute inset-0 -translate-x-[100%] bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 group-hover:translate-x-[100%]"></div>
                         <span class="text-lg font-bold text-white relative z-10">Agende a sessão</span>
@@ -96,22 +96,22 @@ const companyLogos = [
                     </a>
 
                     <!-- WhatsApp Button (Simple, No Animation) -->
-                    <a href="#whatsapp" class="flex items-center gap-2 bg-white text-[#2F3E2E] px-8 py-4 rounded-full text-lg font-bold border border-[#D4E2CD] hover:bg-[#F4F7F2] hover:border-[#3A4D39] transition-all hover:shadow-sm">
+                    <a href="#whatsapp" class="flex items-center gap-2 bg-white text-[#2D3134] px-8 py-4 rounded-full text-lg font-bold border border-[#EBE6DF] hover:bg-[#F9F8F6] hover:border-[#CBD5B9] transition-all hover:shadow-sm">
                         <Icon name="simple-icons:whatsapp" class="size-6 text-[#25D366]" />
                         <span>WhatsApp</span>
                     </a>
                 </div>
 
                 <!-- Numbers -->
-                <div class="grid grid-cols-3 gap-8 pt-10 border-t border-[#D4E2CD] mt-12 max-w-lg">
+                <div class="grid grid-cols-3 gap-8 pt-10 border-t border-[#EBE6DF] mt-12 max-w-lg">
                     {[
                     { id: "01", label: "Acolhimento" },
                     { id: "02", label: "Escuta Ativa" },
                     { id: "03", label: "Transformação" }
                     ].map((item) => (
                         <div>
-                            <span class="block text-3xl font-bold text-[#3A4D39] font-mono">{item.id}</span>
-                            <span class="text-sm font-semibold text-[#4A5D49] uppercase tracking-wider">{item.label}</span>
+                            <span class="block text-3xl font-bold text-[#CBD5B9] font-mono">{item.id}</span>
+                            <span class="text-sm font-semibold text-[#9DAC83] uppercase tracking-wider">{item.label}</span>
                         </div>
                     ))}
                 </div>
@@ -122,7 +122,7 @@ const companyLogos = [
         <div class="hidden md:block w-1/2 h-full absolute right-0 top-0 bottom-0 pointer-events-none z-10">
              <div class="relative w-full h-full">
                 <!-- Mask Overlay for Left Fade Effect -->
-                <div class="absolute inset-0 z-10 bg-gradient-to-r from-[#F4F7F2] via-transparent to-transparent w-full h-full"></div>
+                <div class="absolute inset-0 z-10 bg-gradient-to-r from-[#F9F8F6] via-transparent to-transparent w-full h-full"></div>
                 
                 <!-- Main Image -->
                 <div class="w-full h-full vintage-sepia relative"> 
@@ -130,7 +130,7 @@ const companyLogos = [
                     <div class="vintage-filter absolute inset-0 z-20 mix-blend-overlay pointer-events-none"></div>
                     
                     <img 
-                        src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=988&auto=format&fit=crop" 
+                        src="/assets/images/hero-livia.jpg" 
                         alt="Lívia Gusmão" 
                         class="w-full h-full object-cover object-center"
                     />
@@ -138,10 +138,10 @@ const companyLogos = [
                 
                  <!-- Verified Badge relocated -->
                 <div class="absolute bottom-10 right-10 z-20">
-                    <div class="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-none border-l-4 border-[#3A4D39] shadow-lg flex items-center gap-4">
+                    <div class="bg-white/80 backdrop-blur-sm px-6 py-4 rounded-none border-l-4 border-[#CBD5B9] shadow-lg flex items-center gap-4">
                         <div>
-                             <h2 class="text-xl font-bold text-[#2F3E2E] font-serif italic">{heroName}</h2>
-                             <div class="flex items-center gap-1 text-[#4A5D49] mt-0">
+                             <h2 class="text-xl font-bold text-[#2D3134] font-serif italic">{heroName}</h2>
+                             <div class="flex items-center gap-1 text-[#9DAC83] mt-0">
                                 <span class="text-xs font-medium uppercase tracking-wider">CRP 00/00000</span>
                             </div>
                         </div>

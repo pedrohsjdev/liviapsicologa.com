@@ -4,8 +4,17 @@
 /* See the TailwindCSS v4 docs for more info: https://tailwindcss.com/docs/v4-beta */
 
 @theme {
-  --font-sans: "Inter", sans-serif;
-  --font-serif: "Playfair Display", serif;
+  --color-brand-green-primary: #CBD5B9;
+  --color-brand-green-dark: #26330D;
+  --color-brand-green-intermediate: #9DAC83;
+  --color-brand-terracotta: #BF6832;
+  --color-brand-terracotta-dark: #8D2B00;
+  --color-brand-gray-dark: #2D3134;
+  --color-brand-offwhite: #F9F8F6;
+  --color-brand-beige: #EBE6DF;
+
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Lora", serif;
   
   --animate-spin-slow: spin 8s linear infinite;
 }

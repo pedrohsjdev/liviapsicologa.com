@@ -17,14 +17,14 @@ const { title = "liviapsicologa.com" } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     
-    <!-- Google Fonts: Playfair Display -->
+    <!-- Google Fonts: Lora and Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-[#F4F7F2] text-[#2F3E2E]">
+  <body class="min-h-screen bg-brand-offwhite text-brand-gray-dark font-sans">
     <Header />
     <slot />
   </body>

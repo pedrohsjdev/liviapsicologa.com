@@ -1,0 +1,85 @@
+---
+import { Icon } from "astro-icon/components";
+
+const specialties = [
+    {
+        title: "Ansiedade e Estresse",
+        description: "Tratamento psicológico para crises de ansiedade, sobrecarga mental, esgotamento e gestão do estresse no dia a dia.",
+        icon: "solar:bolt-circle-bold-duotone",
+    },
+    {
+        title: "Autoestima e Autoconfiança",
+        description: "Terapia focada no fortalecimento da autoestima, superação da insegurança, complexo de inferioridade e amor-próprio.",
+        icon: "solar:star-fall-2-bold-duotone",
+    },
+    {
+        title: "Conflitos Amorosos",
+        description: "Apoio emocional para lidar com dependência emocional, términos difíceis, ciúmes e melhora da comunicação nos relacionamentos.",
+        icon: "solar:hearts-bold-duotone",
+    },
+    {
+        title: "Transição de Carreira",
+        description: "Orientação para mudanças profissionais, prevenção à Síndrome de Burnout, insatisfação no trabalho e busca por propósito.",
+        icon: "solar:case-round-bold-duotone",
+    },
+    {
+        title: "Depressão e Tristeza",
+        description: "Acolhimento clínico e tratamento integrado para sintomas depressivos, crises de choro, apatia e resgate da vitalidade.",
+        icon: "solar:cloud-bold-duotone",
+    },
+    {
+        title: "Autoconhecimento",
+        description: "Processo de exploração profunda e desenvolvimento pessoal para viver uma vida mais autêntica e alinhada com seus valores.",
+        icon: "solar:user-bold-duotone",
+    }
+];
+---
+
+<section class="py-24 md:py-32 bg-white relative" id="especialidades">
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row gap-8 justify-between items-end mb-16 md:mb-20">
+            <div class="max-w-2xl">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="w-8 h-[1px] bg-[#BF6832]"></span>
+                    <span class="text-[#BF6832] font-mono tracking-widest uppercase text-xs md:text-sm font-bold">Áreas de Atuação</span>
+                </div>
+                <!-- SEO text embedded naturally in the HTML -->
+                <h2 class="text-4xl md:text-5xl font-serif italic font-medium text-[#2D3134] mb-6 leading-tight">
+                    O que podemos <br class="hidden md:block" />trabalhar juntos?
+                </h2>
+                <p class="text-lg text-gray-600 font-light leading-relaxed">
+                    A psicoterapia online oferece um espaço confidencial para tratar diversas demandas emocionais e psicológicas. Se você tem buscado no Google por formas de aliviar a mente, veja onde a terapia pode te auxiliar:
+                </p>
+            </div>
+            <div class="shrink-0 flex items-center md:pb-4">
+                 <a href="#agendar" class="group inline-flex items-center gap-3 text-[#2D3134] font-bold uppercase tracking-wider text-sm hover:text-[#BF6832] transition-colors">
+                    Agendar consulta
+                    <span class="size-10 rounded-full border border-[#CBD5B9] flex items-center justify-center group-hover:bg-[#BF6832] group-hover:border-[#BF6832] group-hover:text-white transition-all transform group-hover:translate-x-2">
+                         <Icon name="solar:arrow-right-line-duotone" class="size-5" />
+                    </span>
+                 </a>
+            </div>
+        </div>
+
+        <!-- Specialties Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {specialties.map((item) => (
+                <div class="p-8 md:p-10 rounded-[2rem] bg-[#F9F8F6] border border-[#EBE6DF] hover:bg-white hover:border-[#CBD5B9] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="mb-6 p-4 rounded-2xl bg-white border border-[#EBE6DF] text-[#CBD5B9] w-fit group-hover:bg-[#CBD5B9] group-hover:text-white transition-colors duration-300">
+                        <Icon name={item.icon} class="size-8" />
+                    </div>
+                    <!-- Using h3 for secondary SEO keywords -->
+                    <h3 class="text-xl md:text-2xl font-bold text-[#2D3134] mb-4 group-hover:text-[#BF6832] transition-colors duration-300">
+                        {item.title}
+                    </h3>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        {item.description}
+                    </p>
+                </div>
+            ))}
+        </div>
+
+    </div>
+</section>

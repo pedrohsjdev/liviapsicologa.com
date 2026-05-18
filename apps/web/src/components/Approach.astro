@@ -1,0 +1,72 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="py-32 md:py-40 bg-[#F9F8F6] relative" id="metodologia">
+    <!-- Top & Bottom Soft Divides -->
+    <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#EBE6DF] to-transparent opacity-50"></div>
+    <div class="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#EBE6DF] to-transparent opacity-50"></div>
+
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        
+        <!-- Header -->
+        <div class="max-w-3xl mx-auto text-center mb-24 md:mb-32">
+            <div class="flex items-center justify-center gap-4 mb-8">
+                <span class="w-8 h-[1px] bg-[#BF6832]"></span>
+                <span class="text-[#BF6832] font-mono tracking-widest uppercase text-xs md:text-sm font-bold">A Abordagem</span>
+                <span class="w-8 h-[1px] bg-[#BF6832]"></span>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif italic font-medium text-[#2D3134] mb-10 leading-tight">
+                Psicoterapia Centrada na Pessoa
+            </h2>
+            
+            <p class="text-lg md:text-xl text-gray-600 font-light leading-relaxed max-w-2xl mx-auto">
+                Muitas pessoas não conhecem as diferenças entre as abordagens psicológicas. 
+                De forma simples, na <strong class="font-medium text-[#2D3134]">Abordagem Centrada na Pessoa (ACP)</strong>, 
+                o foco é você. Acredito no seu potencial de encontrar as próprias respostas em um ambiente seguro, empático e acolhedor.
+            </p>
+        </div>
+
+        <!-- Pillars Grid with lots of whitespace -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-16 lg:gap-24">
+            
+            <!-- Pillar 1 -->
+            <div class="flex flex-col items-center text-center group">
+                <div class="mb-10 p-8 rounded-full bg-white border border-[#EBE6DF] text-[#CBD5B9] group-hover:text-[#BF6832] group-hover:border-[#BF6832] group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 ease-out">
+                    <Icon name="solar:target-bold-duotone" class="size-12" />
+                </div>
+                <h3 class="text-2xl md:text-3xl font-serif italic font-medium text-[#2D3134] mb-6">Foco no Presente</h3>
+                <p class="text-gray-500 font-light leading-loose text-base md:text-lg">
+                    Trabalhamos com o que você está vivendo no <em>aqui e agora</em>. 
+                    Suas experiências atuais são o ponto de partida para compreender seus sentimentos e construir uma jornada mais leve.
+                </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="flex flex-col items-center text-center group">
+                <div class="mb-10 p-8 rounded-full bg-white border border-[#EBE6DF] text-[#CBD5B9] group-hover:text-[#BF6832] group-hover:border-[#BF6832] group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 ease-out">
+                    <Icon name="solar:heart-angle-bold-duotone" class="size-12" />
+                </div>
+                <h3 class="text-2xl md:text-3xl font-serif italic font-medium text-[#2D3134] mb-6">Relação sem Julgamentos</h3>
+                <p class="text-gray-500 font-light leading-loose text-base md:text-lg">
+                    Você encontrará uma escuta ativa e uma aceitação incondicional. 
+                    Um espaço seguro onde você pode ser quem realmente é, sem medo de avaliações ou críticas.
+                </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="flex flex-col items-center text-center group">
+                <div class="mb-10 p-8 rounded-full bg-white border border-[#EBE6DF] text-[#CBD5B9] group-hover:text-[#BF6832] group-hover:border-[#BF6832] group-hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-500 ease-out">
+                    <Icon name="solar:sun-2-bold-duotone" class="size-12" />
+                </div>
+                <h3 class="text-2xl md:text-3xl font-serif italic font-medium text-[#2D3134] mb-6">Crescimento Pessoal</h3>
+                <p class="text-gray-500 font-light leading-loose text-base md:text-lg">
+                    Acredito na sua capacidade inata de se desenvolver. O processo foca em 
+                    facilitar o seu amadurecimento orgânico e reconexão autêntica com a própria essência.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>

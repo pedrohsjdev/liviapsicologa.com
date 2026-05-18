@@ -1,6 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import About from "../components/About.astro";
+import Approach from "../components/Approach.astro";
+import Specialties from "../components/Specialties.astro";
+import FAQ from "../components/FAQ.astro";
 
 // Hero Data
 const heroTitle = "Um espaço seguro para você reencontrar sua essência e florescer.";
@@ -151,6 +155,18 @@ const companyLogos = [
         </div>
 
     </section>
+
+    <!-- Sobre Mim Section -->
+    <About />
+
+    <!-- Metodologia/Abordagem Section -->
+    <Approach />
+
+    <!-- Especialidades Section -->
+    <Specialties />
+
+    <!-- FAQ Section -->
+    <FAQ />
   </main>
 </Layout>
 

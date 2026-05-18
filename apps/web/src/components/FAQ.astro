@@ -1,0 +1,91 @@
+---
+import { Icon } from "astro-icon/components";
+
+const faqs = [
+    {
+        question: "Como funciona o atendimento online?",
+        answer: "As sessões são realizadas por videochamada via Google Meet com dia e horário marcados. Você só precisa de uma boa conexão com a internet e um lugar silencioso onde se sinta confortável e tenha privacidade."
+    },
+    {
+        question: "Quanto tempo dura a sessão?",
+        answer: "Cada sessão tem a duração de 50 minutos. A frequência é geralmente semanal, mas isso pode ser adaptado de acordo com a sua necessidade e o nosso planejamento."
+    },
+    {
+        question: "Você atende por convênio ou plano de saúde?",
+        answer: "Os atendimentos são exclusivamente particulares. No entanto, eu emito um recibo com todos os meus dados (incluindo o CRP) para que você possa solicitar o reembolso das sessões diretamente ao seu convênio, caso ele ofereça esse benefício."
+    },
+    {
+        question: "O sigilo é garantido no atendimento online?",
+        answer: "Absolutamente. O atendimento psicológico online segue o mesmo rigor ético do presencial. É garantido pelo Código de Ética Profissional e realizado por plataformas com criptografia ponta-a-ponta."
+    },
+    {
+        question: "A Abordagem Centrada na Pessoa serve para o meu problema?",
+        answer: "A ACP não foca apenas no 'problema' ou diagnóstico, mas em você como um ser humano inteiro. Isso significa que ela acolhe demandas muito diversas — desde ansiedade, depressão e estresse, até questões de relacionamento e autoconhecimento profundo."
+    }
+];
+
+// Rich Snippets (Schema.org) for SEO
+const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+        }
+    }))
+};
+---
+
+<section class="py-24 md:py-32 bg-[#F9F8F6] relative" id="duvidas-frequentes">
+    <div class="container mx-auto px-4 md:px-6 relative z-10 max-w-4xl">
+        
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <div class="flex items-center justify-center gap-4 mb-6">
+                <span class="w-8 h-[1px] bg-[#BF6832]"></span>
+                <span class="text-[#BF6832] font-mono tracking-widest uppercase text-xs md:text-sm font-bold">Dúvidas Comuns</span>
+                <span class="w-8 h-[1px] bg-[#BF6832]"></span>
+            </div>
+            
+            <h2 class="text-4xl md:text-5xl font-serif italic font-medium text-[#2D3134] mb-6 leading-tight">
+                Perguntas Frequentes
+            </h2>
+            <p class="text-lg text-gray-600 font-light max-w-2xl mx-auto">
+                Se você não encontrou a resposta para sua dúvida aqui, fique à vontade para me enviar uma mensagem no WhatsApp.
+            </p>
+        </div>
+
+        <!-- FAQ Accordion -->
+        <div class="space-y-4">
+            {faqs.map((faq, index) => (
+                <details class="group bg-white border border-[#EBE6DF] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-[#CBD5B9] transition-all duration-300">
+                    <summary class="flex justify-between items-center cursor-pointer p-6 md:p-8 font-bold text-[#2D3134] text-lg lg:text-xl md:pr-12 group-open:text-[#BF6832] transition-colors relative list-none outline-none marker:hidden">
+                        {faq.question}
+                        <span class="absolute right-6 top-1/2 -translate-y-1/2 text-[#CBD5B9] group-open:text-[#BF6832] transition-transform duration-300 group-open:rotate-45">
+                             <Icon name="solar:add-circle-line-duotone" class="size-8" />
+                        </span>
+                    </summary>
+                    <div class="px-6 md:px-8 pb-8 text-gray-600 font-light leading-relaxed">
+                        <div class="pt-2 border-t border-[#EBE6DF]">
+                            <p class="mt-4">{faq.answer}</p>
+                        </div>
+                    </div>
+                </details>
+            ))}
+        </div>
+
+    </div>
+
+    <!-- Structured Data injection for SEO -->
+    <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    
+    <!-- Normalize Details/Summary styles for Safari -->
+    <style>
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</section>

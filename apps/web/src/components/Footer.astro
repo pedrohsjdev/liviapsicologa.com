@@ -1,0 +1,79 @@
+---
+import { Icon } from "astro-icon/components";
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[#2D3134] text-[#F9F8F6] pt-16 pb-8 border-t-8 border-[#CBD5B9] mt-auto">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-24 mb-16">
+            
+            <!-- Brand & CRP (Mandatory) -->
+            <div>
+                <h3 class="text-3xl font-serif italic mb-2 text-white">Lívia Gusmão</h3>
+                <p class="text-[#CBD5B9] font-mono tracking-widest text-xs mb-6 uppercase block">Psicóloga Clínica</p>
+                
+                <div class="inline-block bg-white/5 px-4 py-3 rounded-xl border border-white/10 mb-6">
+                    <p class="text-sm font-bold text-white tracking-wider flex items-center gap-2">
+                        <Icon name="solar:shield-check-bold-duotone" class="size-5 text-[#CBD5B9]" />
+                        CRP 00/00000
+                    </p>
+                    <p class="text-xs text-white/50 mt-1 font-light">Inscrição no Conselho Regional de Psicologia</p>
+                </div>
+                
+                <p class="text-white/60 font-light text-sm leading-relaxed max-w-sm">
+                    Um espaço seguro e acolhedor para você reencontrar sua essência. Atendimento psicológico online com ética e compromisso.
+                </p>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="md:pl-10">
+                <h4 class="text-xs font-bold mb-6 text-white/50 uppercase tracking-widest font-mono">Navegação</h4>
+                <ul class="space-y-4 font-light text-white/80">
+                    <li><a href="#sobre-mim" class="hover:text-[#CBD5B9] hover:translate-x-1 inline-block transition-all">Sobre Mim</a></li>
+                    <li><a href="#metodologia" class="hover:text-[#CBD5B9] hover:translate-x-1 inline-block transition-all">A Abordagem (ACP)</a></li>
+                    <li><a href="#especialidades" class="hover:text-[#CBD5B9] hover:translate-x-1 inline-block transition-all">Especialidades</a></li>
+                    <li><a href="#duvidas-frequentes" class="hover:text-[#CBD5B9] hover:translate-x-1 inline-block transition-all">Dúvidas Frequentes</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact & Social -->
+            <div>
+                <h4 class="text-xs font-bold mb-6 text-white/50 uppercase tracking-widest font-mono">Contato</h4>
+                <ul class="space-y-4 font-light text-white/80 mb-8">
+                    <li class="flex items-center gap-3 group">
+                        <Icon name="solar:letter-bold-duotone" class="size-5 text-[#CBD5B9] group-hover:text-white transition-colors" />
+                        <a href="mailto:contato@liviapsicologa.com" class="hover:text-white transition-colors">contato@liviapsicologa.com</a>
+                    </li>
+                    <li class="flex items-center gap-3 group">
+                        <Icon name="solar:phone-bold-duotone" class="size-5 text-[#CBD5B9] group-hover:text-white transition-colors" />
+                        <a href="#whatsapp" class="hover:text-white transition-colors">(00) 00000-0000</a>
+                    </li>
+                </ul>
+
+                <h4 class="text-xs font-bold mb-4 text-white/50 uppercase tracking-widest font-mono">Redes Sociais</h4>
+                <div class="flex items-center gap-4">
+                    <a href="#instagram" class="size-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#BF6832] hover:border-[#BF6832] transition-all transform hover:-translate-y-1 text-white shadow-lg" aria-label="Instagram">
+                        <Icon name="simple-icons:instagram" class="size-5" />
+                    </a>
+                    <a href="#whatsapp" class="size-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#25D366] hover:border-[#25D366] transition-all transform hover:-translate-y-1 text-white shadow-lg" aria-label="WhatsApp">
+                        <Icon name="simple-icons:whatsapp" class="size-5" />
+                    </a>
+                    <a href="#linkedin" class="size-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-all transform hover:-translate-y-1 text-white shadow-lg" aria-label="LinkedIn">
+                        <Icon name="simple-icons:linkedin" class="size-5" />
+                    </a>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Copyright -->
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40 font-light">
+            <p>&copy; {currentYear} Lívia Gusmão. Todos os direitos reservados.</p>
+            <p>
+                <a href="#privacidade" class="hover:text-white transition-colors mr-4">Política de Privacidade</a>
+                Feito com carinho para o mundo.
+            </p>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,94 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="py-24 relative overflow-hidden bg-white" id="sobre-mim">
+    <!-- Background Accents -->
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-[#F9F8F6] rounded-l-full -z-0 opacity-50 hidden lg:block"></div>
+    <div class="absolute -left-20 top-20 w-64 h-64 border-[1px] border-[#CBD5B9] rounded-full opacity-20 -z-0"></div>
+    
+    <div class="container mx-auto px-4 md:px-6 relative z-10">
+        <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            
+            <!-- Image Column -->
+            <div class="w-full lg:w-5/12 relative">
+                <!-- Decorative Elements around image -->
+                <div class="absolute -inset-4 border border-[#CBD5B9] rounded-t-full hidden md:block"></div>
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#EBE6DF] rounded-full -z-10 hidden md:block"></div>
+                <div class="absolute -top-6 -left-6 z-20 hidden md:block">
+                     <Icon name="solar:stars-line-duotone" class="text-[#BF6832] size-12" />
+                </div>
+                
+                <div class="relative w-full aspect-[4/5] rounded-t-full overflow-hidden shadow-2xl border-4 border-white">
+                     <!-- Sepia Vintage Filter Container -->
+                    <div class="w-full h-full vintage-sepia relative">
+                        <div class="vintage-filter absolute inset-0 z-20 mix-blend-overlay pointer-events-none"></div>
+                        <!-- Using hero image as placeholder, will be replaced with professional photo -->
+                        <img 
+                            src="/assets/images/hero-livia.jpg" 
+                            alt="Lívia Gusmão - Psicóloga Clínica" 
+                            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="w-full lg:w-7/12">
+                <div class="mb-4 flex items-center gap-4">
+                    <span class="w-12 h-[1px] bg-[#BF6832]"></span>
+                    <span class="text-[#BF6832] font-mono tracking-widest uppercase text-sm font-bold">Sobre Mim</span>
+                </div>
+                
+                <h2 class="text-4xl md:text-5xl font-serif italic font-medium text-[#2D3134] mb-8 leading-tight">
+                    Oi, eu sou a Lívia Gusmão, <br class="hidden md:block"/>
+                    sua psicóloga online.
+                </h2>
+                
+                <div class="space-y-6 text-lg text-gray-700 font-light leading-relaxed mb-10">
+                    <p>
+                        Acredito que o processo terapêutico é um mergulho profundo em si mesmo. Meu objetivo é proporcionar um ambiente seguro, acolhedor e livre de julgamentos, onde você possa se expressar com liberdade e autenticidade.
+                    </p>
+                    <p>
+                        Como psicóloga clínica, trabalho a partir de uma abordagem empática, focada em ajudar você a compreender suas emoções, desenvolver o autoconhecimento e encontrar caminhos para lidar com os desafios da vida, sejam eles emocionais, relacionais ou profissionais.
+                    </p>
+                    <p>
+                        Seja para enfrentar a ansiedade, ressignificar traumas ou apenas para ter um espaço de escuta ativa, estou aqui para caminhar ao seu lado nessa jornada de transformação e florescimento pessoal.
+                    </p>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-6 mb-12">
+                    <div class="flex items-center gap-4 bg-[#F9F8F6] px-6 py-4 rounded-2xl border border-[#EBE6DF]">
+                        <div class="bg-[#CBD5B9] text-white p-3 rounded-full shrink-0 shadow-sm">
+                            <Icon name="solar:diploma-verified-bold-duotone" class="size-6" />
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#2D3134]">Psicóloga Clínica</h4>
+                            <p class="text-sm text-[#9DAC83] font-mono tracking-wider">CRP: 00/00000</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-4 bg-[#F9F8F6] px-6 py-4 rounded-2xl border border-[#EBE6DF]">
+                        <div class="bg-white border-[1px] border-[#CBD5B9] text-[#BF6832] p-3 rounded-full shrink-0 shadow-sm">
+                            <Icon name="solar:monitor-smartphone-bold-duotone" class="size-6" />
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#2D3134]">Atendimento Online</h4>
+                            <p class="text-sm text-[#9DAC83] font-mono tracking-wider">Do mundo, para o mundo</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-[#EBE6DF]">
+                    <a href="#agendar" class="group inline-flex items-center gap-3 text-[#2D3134] font-bold uppercase tracking-wider text-sm hover:text-[#BF6832] transition-colors">
+                        Saber mais sobre as sessões
+                        <span class="size-10 rounded-full border border-[#CBD5B9] flex items-center justify-center group-hover:bg-[#BF6832] group-hover:border-[#BF6832] group-hover:text-white transition-all transform group-hover:translate-x-2">
+                             <Icon name="solar:arrow-right-line-duotone" class="size-5" />
+                        </span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>

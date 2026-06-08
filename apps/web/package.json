@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.5.0",
+    "@astrojs/vercel": "^9.0.0",
     "@iconify-json/simple-icons": "^1.2.68",
     "@iconify-json/solar": "^1.2.5",
     "@liviapsicologa.com/env": "workspace:*",

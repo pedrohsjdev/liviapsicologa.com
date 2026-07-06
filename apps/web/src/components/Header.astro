@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
+import { CAL_NAMESPACE } from "./CalEmbed.astro";
+import { PUBLIC_CAL_LINK } from "astro:env/client";
 
 const links = [
   { to: "/", label: "Início" },
@@ -7,6 +9,8 @@ const links = [
   { to: "#servicos", label: "Serviços" },
   { to: "#contato", label: "Contato" },
 ];
+
+const calBookingUrl = PUBLIC_CAL_LINK ? `https://cal.com/${PUBLIC_CAL_LINK}` : "#contato";
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 bg-[#F9F8F6]/80 backdrop-blur-md border-b border-[#CBD5B9]/5">
@@ -25,7 +29,13 @@ const links = [
     </nav>
     
     <div class="flex items-center gap-2" id="user-menu-container">
-        <a href="#contato" class="hidden md:block rounded-full bg-[#BF6832] px-5 py-2 text-sm font-medium text-white hover:bg-[#8D2B00] transition-colors">
+        <a
+            href={calBookingUrl}
+            data-cal-namespace={CAL_NAMESPACE}
+            data-cal-link={PUBLIC_CAL_LINK}
+            data-cal-config='{"layout":"month_view"}'
+            class="hidden md:block rounded-full bg-[#BF6832] px-5 py-2 text-sm font-medium text-white hover:bg-[#8D2B00] transition-colors"
+        >
             Agendar
         </a>
     </div>

@@ -12,4 +12,13 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  env: {
+    schema: {
+      PUBLIC_CAL_LINK: envField.string({
+        context: "client",
+        access: "public",
+        optional: true,
+      }),
+    },
+  },
 });

@@ -5,10 +5,13 @@ import About from "../components/About.astro";
 import Approach from "../components/Approach.astro";
 import Specialties from "../components/Specialties.astro";
 import FAQ from "../components/FAQ.astro";
+import { CAL_NAMESPACE } from "../components/CalEmbed.astro";
+import { PUBLIC_CAL_LINK } from "astro:env/client";
 
 // Hero Data
 const heroTitle = "Um espaço seguro para você reencontrar sua essência e florescer.";
 const heroName = "Lívia Gusmão";
+const calBookingUrl = PUBLIC_CAL_LINK ? `https://cal.com/${PUBLIC_CAL_LINK}` : "#agendar";
 const companyLogos = [
     "simple-icons:nasa",
     "simple-icons:spacex",
@@ -92,11 +95,17 @@ const companyLogos = [
 
                 <div class="flex flex-wrap gap-6 pt-12 items-center">
                     <!-- Standard Button (Previous WhatsApp style) -->
-                    <a href="#agendar" class="group relative inline-flex items-center gap-2 overflow-hidden bg-[#BF6832] px-8 py-4 rounded-full transition-all hover:bg-[#8D2B00] hover:shadow-xl hover:-translate-y-0.5">
+                    <a
+                        href={calBookingUrl}
+                        data-cal-namespace={CAL_NAMESPACE}
+                        data-cal-link={PUBLIC_CAL_LINK}
+                        data-cal-config='{"layout":"month_view"}'
+                        class="group relative inline-flex items-center gap-2 overflow-hidden bg-[#BF6832] px-8 py-4 rounded-full transition-all hover:bg-[#8D2B00] hover:shadow-xl hover:-translate-y-0.5"
+                    >
                         <!-- Subtle shimmer effect -->
                         <div class="absolute inset-0 -translate-x-[100%] bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-1000 group-hover:translate-x-[100%]"></div>
                         <span class="text-lg font-bold text-white relative z-10">Agende a sessão</span>
-                        <Icon name="solar:calendar-add-bold-duotone" class="size-6 text-white relative z-10" /> 
+                        <Icon name="solar:calendar-add-bold-duotone" class="size-6 text-white relative z-10" />
                     </a>
 
                     <!-- WhatsApp Button (Simple, No Animation) -->

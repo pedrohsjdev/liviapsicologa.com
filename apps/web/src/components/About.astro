@@ -1,5 +1,9 @@
 ---
 import { Icon } from "astro-icon/components";
+import { CAL_NAMESPACE } from "./CalEmbed.astro";
+import { PUBLIC_CAL_LINK } from "astro:env/client";
+
+const calBookingUrl = PUBLIC_CAL_LINK ? `https://cal.com/${PUBLIC_CAL_LINK}` : "#agendar";
 ---
 
 <section class="py-24 relative overflow-hidden bg-white" id="sobre-mim">
@@ -80,7 +84,13 @@ import { Icon } from "astro-icon/components";
                 </div>
 
                 <div class="pt-6 border-t border-[#EBE6DF]">
-                    <a href="#agendar" class="group inline-flex items-center gap-3 text-[#2D3134] font-bold uppercase tracking-wider text-sm hover:text-[#BF6832] transition-colors">
+                    <a
+                        href={calBookingUrl}
+                        data-cal-namespace={CAL_NAMESPACE}
+                        data-cal-link={PUBLIC_CAL_LINK}
+                        data-cal-config='{"layout":"month_view"}'
+                        class="group inline-flex items-center gap-3 text-[#2D3134] font-bold uppercase tracking-wider text-sm hover:text-[#BF6832] transition-colors"
+                    >
                         Saber mais sobre as sessões
                         <span class="size-10 rounded-full border border-[#CBD5B9] flex items-center justify-center group-hover:bg-[#BF6832] group-hover:border-[#BF6832] group-hover:text-white transition-all transform group-hover:translate-x-2">
                              <Icon name="solar:arrow-right-line-duotone" class="size-5" />

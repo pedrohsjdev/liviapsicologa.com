@@ -1,10 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+export const prerender = true;
+
 const lastUpdated = "22 de julho de 2026";
 ---
 
-<Layout title="Política de Privacidade | Lívia Gusmão">
+<Layout
+  title="Política de Privacidade | Lívia Gusmão"
+  description="Como o site da psicóloga Lívia Gusmão trata dados pessoais: agendamento via Cal.com, contato via WhatsApp e seus direitos garantidos pela LGPD."
+>
   <main class="pt-32 pb-24 bg-[#F9F8F6]">
     <div class="container mx-auto px-6 max-w-3xl">
       <p class="text-xs font-bold uppercase tracking-widest font-mono text-[#9DAC83] mb-4">Transparência</p>

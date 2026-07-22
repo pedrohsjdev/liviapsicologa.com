@@ -1,14 +1,16 @@
 import vercel from "@astrojs/vercel/serverless";
 // @ts-check
+import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField } from "astro/config";
 import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://www.liviapsicologa.com.br",
   output: "server",
   adapter: vercel(),
-  integrations: [icon()],
+  integrations: [icon(), sitemap()],
   vite: {
     plugins: [tailwindcss()],
   },

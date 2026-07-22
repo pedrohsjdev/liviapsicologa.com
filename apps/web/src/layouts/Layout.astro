@@ -6,25 +6,52 @@ import CalEmbed from "../components/CalEmbed.astro";
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
-const { title = "liviapsicologa.com" } = Astro.props;
+const {
+  title = "Lívia Gusmão | Psicóloga Clínica Online",
+  description = "Atendimento psicológico online com a psicóloga Lívia Gusmão (CRP 03/35624). Um espaço seguro e acolhedor para reencontrar sua essência. Agende sua sessão.",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/assets/images/og-livia.jpg", Astro.site);
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lívia Gusmão | Psicóloga" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
     <!-- Google Fonts: Lora and Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <title>{title}</title>
   </head>
   <body class="min-h-screen bg-brand-offwhite text-brand-gray-dark font-sans flex flex-col">
     <Header />

@@ -8,13 +8,39 @@ import FAQ from "../components/FAQ.astro";
 import { CAL_NAMESPACE } from "../components/CalEmbed.astro";
 import { PUBLIC_CAL_LINK } from "astro:env/client";
 
+export const prerender = true;
+
 // Hero Data
 const heroTitle = "Um espaço seguro para você reencontrar sua essência e florescer.";
 const heroName = "Lívia Gusmão";
 const calBookingUrl = PUBLIC_CAL_LINK ? `https://cal.com/${PUBLIC_CAL_LINK}` : "#agendar";
+
+// Rich snippet: professional entity (name, CRP, contacts)
+const psychologistSchema = {
+  "@context": "https://schema.org",
+  "@type": "Psychologist",
+  name: "Lívia Gusmão",
+  description: "Atendimento psicológico online com abordagem centrada na pessoa (ACP).",
+  url: "https://www.liviapsicologa.com.br/",
+  image: "https://www.liviapsicologa.com.br/assets/images/og-livia.jpg",
+  telephone: "+5577998728332",
+  email: "liviagusmao.psi@gmail.com",
+  identifier: {
+    "@type": "PropertyValue",
+    propertyID: "CRP",
+    value: "03/35624",
+  },
+  areaServed: "BR",
+  sameAs: [
+    "https://instagram.com/liviagusmao.psi",
+    "https://www.linkedin.com/in/livia-magalh%C3%A3es-santos-gusm%C3%A3o-889625216/",
+  ],
+};
 ---
 
-<Layout title="Lívia Gusmão | Psicóloga">
+<Layout>
+  <!-- Structured data: professional entity -->
+  <script type="application/ld+json" set:html={JSON.stringify(psychologistSchema)} />
   <!-- CSS for Clip Animation & Circular Text -->
   <style>
     @keyframes clipIntro {
@@ -134,9 +160,12 @@ const calBookingUrl = PUBLIC_CAL_LINK ? `https://cal.com/${PUBLIC_CAL_LINK}` : "
                      <!-- Heavy Grain Filter on top -->
                     <div class="vintage-filter absolute inset-0 z-20 mix-blend-overlay pointer-events-none"></div>
                     
-                    <img 
-                        src="/assets/images/hero-livia.jpg" 
-                        alt="Lívia Gusmão" 
+                    <img
+                        src="/assets/images/hero-livia.webp"
+                        alt="Lívia Gusmão"
+                        width="1400"
+                        height="2100"
+                        fetchpriority="high"
                         class="w-full h-full object-cover object-center"
                     />
                 </div>

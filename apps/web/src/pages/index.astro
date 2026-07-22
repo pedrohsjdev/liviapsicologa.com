@@ -12,14 +12,6 @@ import { PUBLIC_CAL_LINK } from "astro:env/client";
 const heroTitle = "Um espaço seguro para você reencontrar sua essência e florescer.";
 const heroName = "Lívia Gusmão";
 const calBookingUrl = PUBLIC_CAL_LINK ? `https://cal.com/${PUBLIC_CAL_LINK}` : "#agendar";
-const companyLogos = [
-    "simple-icons:nasa",
-    "simple-icons:spacex",
-    "simple-icons:uber",
-    "simple-icons:visa",
-    "simple-icons:grab"
-];
-
 ---
 
 <Layout title="Lívia Gusmão | Psicóloga">
@@ -77,7 +69,7 @@ const companyLogos = [
         </div>
 
         <!-- Content Container (Aligns with Header) -->
-        <div class="container mx-auto px-4 md:px-6 relative z-20 flex items-center h-full min-h-[inherit]">
+        <div class="container mx-auto px-6 relative z-20 flex items-center h-full min-h-[inherit]">
             <!-- Left Content (50% of Container) -->
             <div class="w-full md:w-1/2 flex flex-col justify-center py-12 md:py-0 animate-clip-intro">
                 <div>

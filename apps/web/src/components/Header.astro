@@ -14,7 +14,7 @@ const calBookingUrl = PUBLIC_CAL_LINK ? `https://cal.com/${PUBLIC_CAL_LINK}` : "
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 bg-[#F9F8F6]/80 backdrop-blur-md border-b border-[#CBD5B9]/5">
-  <div class="container mx-auto flex flex-row items-center justify-between px-4 py-4 md:px-6">
+  <div class="container mx-auto flex flex-row items-center justify-between px-6 py-4">
     <a href="/" class="flex items-center gap-2 text-2xl font-bold tracking-tighter text-[#2D3134]">
       <Icon name="solar:leaf-linear" class="h-8 w-8" />
       <span>Lívia Gusmão</span>
@@ -27,7 +27,7 @@ const calBookingUrl = PUBLIC_CAL_LINK ? `https://cal.com/${PUBLIC_CAL_LINK}` : "
         </a>
       ))}
     </nav>
-    
+
     <div class="flex items-center gap-2" id="user-menu-container">
         <a
             href={calBookingUrl}
@@ -38,9 +38,64 @@ const calBookingUrl = PUBLIC_CAL_LINK ? `https://cal.com/${PUBLIC_CAL_LINK}` : "
         >
             Agendar
         </a>
+
+        <!-- Mobile menu toggle -->
+        <button
+            id="mobile-menu-toggle"
+            type="button"
+            class="md:hidden flex items-center justify-center size-11 rounded-full text-[#2D3134] hover:bg-[#EBE6DF]/60 transition-colors"
+            aria-label="Abrir menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+        >
+            <Icon name="solar:hamburger-menu-linear" class="size-6" id="menu-icon-open" />
+            <Icon name="solar:close-circle-linear" class="size-6 hidden" id="menu-icon-close" />
+        </button>
     </div>
-    
+
+  </div>
+
+  <!-- Mobile menu panel -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-[#EBE6DF] bg-[#F9F8F6]/95 backdrop-blur-md shadow-lg">
+    <nav class="container mx-auto px-6 py-4 flex flex-col">
+      {links.map((link) => (
+        <a href={link.to} class="py-3 text-lg font-medium text-[#2D3134]/80 hover:text-[#BF6832] border-b border-[#EBE6DF]/60 last:border-b-0 transition-colors">
+          {link.label}
+        </a>
+      ))}
+      <a
+          href={calBookingUrl}
+          data-cal-namespace={CAL_NAMESPACE}
+          data-cal-link={PUBLIC_CAL_LINK}
+          data-cal-config='{"layout":"month_view"}'
+          class="mt-4 mb-2 rounded-full bg-[#BF6832] px-6 py-3.5 text-center text-base font-bold text-white hover:bg-[#8D2B00] transition-colors"
+      >
+          Agendar sessão
+      </a>
+    </nav>
   </div>
 </header>
 
+<script>
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const iconOpen = document.getElementById("menu-icon-open");
+  const iconClose = document.getElementById("menu-icon-close");
 
+  const setOpen = (open: boolean) => {
+    menu?.classList.toggle("hidden", !open);
+    iconOpen?.classList.toggle("hidden", open);
+    iconClose?.classList.toggle("hidden", !open);
+    toggle?.setAttribute("aria-expanded", String(open));
+    toggle?.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+  };
+
+  toggle?.addEventListener("click", () => {
+    setOpen(menu?.classList.contains("hidden") ?? false);
+  });
+
+  // Close the menu after choosing a destination (anchor scroll or Cal.com popup)
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+</script>

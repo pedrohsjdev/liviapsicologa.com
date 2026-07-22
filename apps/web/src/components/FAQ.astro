@@ -62,9 +62,9 @@ const faqSchema = {
         <div class="space-y-4">
             {faqs.map((faq, index) => (
                 <details class="group bg-white border border-[#EBE6DF] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-[#CBD5B9] transition-all duration-300">
-                    <summary class="flex justify-between items-center cursor-pointer p-6 md:p-8 font-bold text-[#2D3134] text-lg lg:text-xl md:pr-12 group-open:text-[#BF6832] transition-colors relative list-none outline-none marker:hidden">
-                        {faq.question}
-                        <span class="absolute right-6 top-1/2 -translate-y-1/2 text-[#CBD5B9] group-open:text-[#BF6832] transition-transform duration-300 group-open:rotate-45">
+                    <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 md:p-8 font-bold text-[#2D3134] text-lg lg:text-xl group-open:text-[#BF6832] transition-colors list-none outline-none marker:hidden">
+                        <span>{faq.question}</span>
+                        <span class="shrink-0 text-[#CBD5B9] group-open:text-[#BF6832] transition-transform duration-300 group-open:rotate-45">
                              <Icon name="solar:add-circle-line-duotone" class="size-8" />
                         </span>
                     </summary>

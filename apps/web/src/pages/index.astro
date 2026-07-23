@@ -16,10 +16,12 @@ const heroName = "Lívia Gusmão";
 const calBookingUrl = PUBLIC_CAL_LINK ? `https://cal.com/${PUBLIC_CAL_LINK}` : "#agendar";
 
 // Rich snippet: professional entity (name, CRP, contacts)
+// Name and service area mirror the Google Business Profile for NAP consistency
 const psychologistSchema = {
   "@context": "https://schema.org",
   "@type": "Psychologist",
-  name: "Lívia Gusmão",
+  name: "Psicóloga Lívia Gusmão",
+  alternateName: "Lívia Gusmão",
   description: "Atendimento psicológico online com abordagem centrada na pessoa (ACP).",
   url: "https://www.liviapsicologa.com.br/",
   image: "https://www.liviapsicologa.com.br/assets/images/og-livia.jpg",
@@ -30,7 +32,14 @@ const psychologistSchema = {
     propertyID: "CRP",
     value: "03/35624",
   },
-  areaServed: "BR",
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Vitória da Conquista",
+      containedInPlace: { "@type": "State", name: "Bahia" },
+    },
+    { "@type": "Country", name: "Brasil" },
+  ],
   sameAs: [
     "https://instagram.com/liviagusmao.psi",
     "https://www.linkedin.com/in/livia-magalh%C3%A3es-santos-gusm%C3%A3o-889625216/",
